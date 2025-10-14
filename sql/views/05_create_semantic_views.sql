@@ -158,8 +158,6 @@ CREATE OR REPLACE SEMANTIC VIEW SV_FLEET_OPERATIONS_INTELLIGENCE
       COMMENT = 'Service fulfillment records'
   )
   RELATIONSHIPS (
-    service_trucks(service_region) REFERENCES service_regions(region_name),
-    service_technicians(service_region) REFERENCES service_regions(region_name),
     service_fulfillment(technician_id) REFERENCES service_technicians(technician_id),
     service_fulfillment(truck_id) REFERENCES service_trucks(truck_id)
   )
