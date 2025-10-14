@@ -55,8 +55,8 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MEMBER_SERVICE_INTELLIGENCE
     members.membership_status AS membership_status
       WITH SYNONYMS ('member status', 'account status')
       COMMENT = 'Member status: ACTIVE, EXPIRED, SUSPENDED',
-    members.is_auto_renew AS auto_renew_enabled
-      WITH SYNONYMS ('automatic renewal', 'auto renewal')
+    members.is_auto_renew AS is_auto_renew
+      WITH SYNONYMS ('automatic renewal', 'auto renewal', 'auto renew enabled')
       COMMENT = 'Whether auto-renewal is enabled',
     members.state AS state
       WITH SYNONYMS ('state', 'location state')
@@ -264,13 +264,13 @@ CREATE OR REPLACE SEMANTIC VIEW SV_PREDICTIVE_ANALYTICS_INTELLIGENCE
     weather_conditions(region_id) REFERENCES service_regions(region_id)
   )
   DIMENSIONS (
-    predictive_scores.breakdown_risk AS breakdown_risk_score
+    predictive_scores.breakdown_risk_score AS breakdown_risk_score
       WITH SYNONYMS ('breakdown probability', 'failure risk')
       COMMENT = 'Breakdown risk score (0-100)',
-    predictive_scores.churn_risk AS churn_risk_score
+    predictive_scores.churn_risk_score AS churn_risk_score
       WITH SYNONYMS ('cancellation risk', 'attrition risk')
       COMMENT = 'Churn risk score (0-100)',
-    predictive_scores.outreach_recommendation AS recommended_outreach
+    predictive_scores.recommended_outreach AS recommended_outreach
       WITH SYNONYMS ('recommended action', 'next best action')
       COMMENT = 'Recommended outreach action',
     predictive_scores.model_version AS model_version
@@ -285,13 +285,13 @@ CREATE OR REPLACE SEMANTIC VIEW SV_PREDICTIVE_ANALYTICS_INTELLIGENCE
     early_warning_alerts.alert_title AS alert_title
       WITH SYNONYMS ('alert name', 'warning title')
       COMMENT = 'Alert title',
-    weather_conditions.weather AS condition
+    weather_conditions.condition AS condition
       WITH SYNONYMS ('weather type', 'weather condition')
       COMMENT = 'Weather condition: CLEAR, RAIN, FOG, HOT',
-    weather_conditions.temperature AS temperature_f
+    weather_conditions.temperature_f AS temperature_f
       WITH SYNONYMS ('temp', 'degrees fahrenheit')
       COMMENT = 'Temperature in Fahrenheit',
-    weather_conditions.road_condition AS road_conditions
+    weather_conditions.road_conditions AS road_conditions
       WITH SYNONYMS ('road state', 'driving conditions')
       COMMENT = 'Road conditions: DRY, WET, REDUCED_VISIBILITY',
     members.membership_level AS membership_level
