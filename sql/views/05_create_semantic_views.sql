@@ -102,34 +102,34 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MEMBER_SERVICE_INTELLIGENCE
       COMMENT = 'Member satisfaction score (1-5)'
   )
   METRICS (
-    members.total_members AS COUNT(DISTINCT member_id)
+    members.total_members AS COUNT(DISTINCT members.member_id)
       WITH SYNONYMS ('member count', 'customer count')
       COMMENT = 'Total number of members',
-    members.avg_lifetime_value AS AVG(lifetime_value)
+    members.avg_lifetime_value AS AVG(members.lifetime_value)
       WITH SYNONYMS ('average LTV', 'mean customer value')
       COMMENT = 'Average member lifetime value',
-    members.avg_risk_score AS AVG(risk_score)
+    members.avg_risk_score AS AVG(members.risk_score)
       WITH SYNONYMS ('average risk', 'mean risk score')
       COMMENT = 'Average member risk score',
-    vehicles.total_vehicles AS COUNT(DISTINCT vehicle_id)
+    vehicles.total_vehicles AS COUNT(DISTINCT vehicles.vehicle_id)
       WITH SYNONYMS ('vehicle count', 'car count')
       COMMENT = 'Total number of vehicles',
-    vehicles.avg_vehicle_mileage AS AVG(mileage)
+    vehicles.avg_vehicle_mileage AS AVG(vehicles.mileage)
       WITH SYNONYMS ('average mileage', 'mean mileage')
       COMMENT = 'Average vehicle mileage',
-    service_requests.total_service_requests AS COUNT(DISTINCT service_id)
+    service_requests.total_service_requests AS COUNT(DISTINCT service_requests.service_id)
       WITH SYNONYMS ('request count', 'call count', 'service count')
       COMMENT = 'Total number of service requests',
-    service_fulfillment.avg_response_time AS AVG(response_time_minutes)
+    service_fulfillment.avg_response_time AS AVG(service_fulfillment.response_time_minutes)
       WITH SYNONYMS ('average response time', 'mean response time')
       COMMENT = 'Average response time in minutes',
-    service_fulfillment.avg_service_duration AS AVG(service_duration_minutes)
+    service_fulfillment.avg_service_duration AS AVG(service_fulfillment.service_duration_minutes)
       WITH SYNONYMS ('average service time', 'mean duration')
       COMMENT = 'Average service duration in minutes',
-    service_fulfillment.avg_satisfaction AS AVG(member_satisfaction_score)
+    service_fulfillment.avg_satisfaction AS AVG(service_fulfillment.member_satisfaction_score)
       WITH SYNONYMS ('average satisfaction', 'mean satisfaction')
       COMMENT = 'Average member satisfaction score',
-    service_fulfillment.total_service_cost AS SUM(service_cost)
+    service_fulfillment.total_service_cost AS SUM(service_fulfillment.service_cost)
       WITH SYNONYMS ('total cost', 'service cost sum')
       COMMENT = 'Total cost of services provided'
   )
@@ -197,34 +197,34 @@ CREATE OR REPLACE SEMANTIC VIEW SV_FLEET_OPERATIONS_INTELLIGENCE
       COMMENT = 'Service outcome'
   )
   METRICS (
-    service_trucks.total_trucks AS COUNT(DISTINCT truck_id)
+    service_trucks.total_trucks AS COUNT(DISTINCT service_trucks.truck_id)
       WITH SYNONYMS ('truck count', 'fleet size')
       COMMENT = 'Total number of trucks',
-    service_trucks.avg_truck_mileage AS AVG(mileage)
+    service_trucks.avg_truck_mileage AS AVG(service_trucks.mileage)
       WITH SYNONYMS ('average mileage', 'mean truck mileage')
       COMMENT = 'Average truck mileage',
-    service_technicians.total_technicians AS COUNT(DISTINCT technician_id)
+    service_technicians.total_technicians AS COUNT(DISTINCT service_technicians.technician_id)
       WITH SYNONYMS ('technician count', 'driver count', 'staff count')
       COMMENT = 'Total number of technicians',
-    service_technicians.avg_technician_rating AS AVG(average_satisfaction_rating)
+    service_technicians.avg_technician_rating AS AVG(service_technicians.average_satisfaction_rating)
       WITH SYNONYMS ('average rating', 'mean satisfaction')
       COMMENT = 'Average technician satisfaction rating',
-    service_technicians.total_services_by_technicians AS SUM(total_services_completed)
+    service_technicians.total_services_by_technicians AS SUM(service_technicians.total_services_completed)
       WITH SYNONYMS ('total completions', 'services completed')
       COMMENT = 'Total services completed by all technicians',
-    service_regions.total_regions AS COUNT(DISTINCT region_id)
+    service_regions.total_regions AS COUNT(DISTINCT service_regions.region_id)
       WITH SYNONYMS ('region count', 'territory count')
       COMMENT = 'Total number of service regions',
-    service_regions.total_population_covered AS SUM(population_covered)
+    service_regions.total_population_covered AS SUM(service_regions.population_covered)
       WITH SYNONYMS ('population served', 'coverage population')
       COMMENT = 'Total population covered by AAA',
-    service_regions.total_coverage_area AS SUM(coverage_area_sqmi)
+    service_regions.total_coverage_area AS SUM(service_regions.coverage_area_sqmi)
       WITH SYNONYMS ('total area', 'coverage square miles')
       COMMENT = 'Total coverage area in square miles',
-    service_fulfillment.avg_response_time AS AVG(response_time_minutes)
+    service_fulfillment.avg_response_time AS AVG(service_fulfillment.response_time_minutes)
       WITH SYNONYMS ('average response', 'mean response time')
       COMMENT = 'Average response time in minutes',
-    service_fulfillment.avg_distance_to_service AS AVG(distance_to_member_miles)
+    service_fulfillment.avg_distance_to_service AS AVG(service_fulfillment.distance_to_member_miles)
       WITH SYNONYMS ('average distance', 'mean service distance')
       COMMENT = 'Average distance to service location in miles'
   )
@@ -300,34 +300,34 @@ CREATE OR REPLACE SEMANTIC VIEW SV_PREDICTIVE_ANALYTICS_INTELLIGENCE
       COMMENT = 'Service region name'
   )
   METRICS (
-    predictive_scores.total_predictions AS COUNT(DISTINCT score_id)
+    predictive_scores.total_predictions AS COUNT(DISTINCT predictive_scores.score_id)
       WITH SYNONYMS ('prediction count', 'score count')
       COMMENT = 'Total number of predictions',
-    predictive_scores.avg_breakdown_risk AS AVG(breakdown_risk_score)
+    predictive_scores.avg_breakdown_risk AS AVG(predictive_scores.breakdown_risk_score)
       WITH SYNONYMS ('average breakdown risk', 'mean failure risk')
       COMMENT = 'Average breakdown risk score',
-    predictive_scores.avg_churn_risk AS AVG(churn_risk_score)
+    predictive_scores.avg_churn_risk AS AVG(predictive_scores.churn_risk_score)
       WITH SYNONYMS ('average churn risk', 'mean attrition risk')
       COMMENT = 'Average churn risk score',
-    predictive_scores.avg_ltv_prediction AS AVG(lifetime_value_prediction)
+    predictive_scores.avg_ltv_prediction AS AVG(predictive_scores.lifetime_value_prediction)
       WITH SYNONYMS ('average predicted LTV', 'mean lifetime value')
       COMMENT = 'Average predicted lifetime value',
-    early_warning_alerts.total_alerts AS COUNT(DISTINCT alert_id)
+    early_warning_alerts.total_alerts AS COUNT(DISTINCT early_warning_alerts.alert_id)
       WITH SYNONYMS ('alert count', 'warning count')
       COMMENT = 'Total number of alerts',
-    early_warning_alerts.total_affected_services AS SUM(affected_services)
+    early_warning_alerts.total_affected_services AS SUM(early_warning_alerts.affected_services)
       WITH SYNONYMS ('services impacted', 'affected count')
       COMMENT = 'Total services affected by alerts',
-    weather_conditions.total_weather_records AS COUNT(DISTINCT weather_id)
+    weather_conditions.total_weather_records AS COUNT(DISTINCT weather_conditions.weather_id)
       WITH SYNONYMS ('weather observation count')
       COMMENT = 'Total weather observations',
-    weather_conditions.avg_temperature AS AVG(temperature_f)
+    weather_conditions.avg_temperature AS AVG(weather_conditions.temperature_f)
       WITH SYNONYMS ('average temperature', 'mean temp')
       COMMENT = 'Average temperature in Fahrenheit',
-    weather_conditions.avg_wind_speed AS AVG(wind_speed_mph)
+    weather_conditions.avg_wind_speed AS AVG(weather_conditions.wind_speed_mph)
       WITH SYNONYMS ('average wind', 'mean wind speed')
       COMMENT = 'Average wind speed in mph',
-    weather_conditions.total_precipitation AS SUM(precipitation_inches)
+    weather_conditions.total_precipitation AS SUM(weather_conditions.precipitation_inches)
       WITH SYNONYMS ('total rain', 'precipitation sum')
       COMMENT = 'Total precipitation in inches'
   )
