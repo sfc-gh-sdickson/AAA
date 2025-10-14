@@ -1,6 +1,6 @@
 # AAA Intelligence Agent
 
-<img src="docs/Snowflake_Logo.svg" width="150">
+<img src="Snowflake_Logo.svg" width="150">
 
 A Snowflake Intelligence solution for AAA (American Automobile Association) California, providing AI-powered analytics for roadside assistance operations, member services, and fleet management.
 
