@@ -291,8 +291,8 @@ INSERT INTO SERVICE_FULFILLMENT
 SELECT
     'FUL' || sr.service_id AS fulfillment_id,
     sr.service_id,
-    t.technician_id,
-    tr.truck_id,
+    'TEC' || LPAD(UNIFORM(1, 500, RANDOM()), 5, '0') AS technician_id,
+    'TRK' || LPAD(UNIFORM(1, 750, RANDOM()), 5, '0') AS truck_id,
     DATEADD('minute', UNIFORM(5, 20, RANDOM()), sr.request_timestamp) AS dispatch_timestamp,
     DATEADD('minute', 
         CASE sr.priority
@@ -311,8 +311,7 @@ SELECT
         END, arrival_timestamp) AS completion_timestamp,
     DATEDIFF('minute', dispatch_timestamp, arrival_timestamp) AS response_time_minutes,
     DATEDIFF('minute', arrival_timestamp, completion_timestamp) AS service_duration_minutes,
-    ROUND(SQRT(POWER(sr.location_latitude - tr.current_latitude, 2) + 
-               POWER(sr.location_longitude - tr.current_longitude, 2)) * 69, 1) AS distance_to_member_miles,
+    ROUND(UNIFORM(1, 50, RANDOM()) * 1.0, 1) AS distance_to_member_miles,
     CASE 
         WHEN sr.service_type = 'TOWING' AND UNIFORM(0, 100, RANDOM()) < 90 THEN 'TOWED'
         WHEN UNIFORM(0, 100, RANDOM()) < 95 THEN 'COMPLETED'
@@ -354,35 +353,7 @@ SELECT
         )[UNIFORM(0, 4, RANDOM())]
     ELSE NULL END AS technician_notes,
     sr.created_at AS created_at
-FROM SERVICE_REQUESTS sr
-CROSS JOIN LATERAL (
-    SELECT technician_id 
-    FROM SERVICE_TECHNICIANS 
-    WHERE service_region = (
-        SELECT region_name 
-        FROM SERVICE_REGIONS 
-        ORDER BY SQRT(POWER(34.0522 - sr.location_latitude, 2) + 
-                     POWER(-118.2437 - sr.location_longitude, 2))
-        LIMIT 1
-    )
-    AND technician_status = 'ACTIVE'
-    ORDER BY RANDOM()
-    LIMIT 1
-) t
-CROSS JOIN LATERAL (
-    SELECT truck_id, current_latitude, current_longitude
-    FROM SERVICE_TRUCKS 
-    WHERE service_region = (
-        SELECT region_name 
-        FROM SERVICE_REGIONS 
-        ORDER BY SQRT(POWER(34.0522 - sr.location_latitude, 2) + 
-                     POWER(-118.2437 - sr.location_longitude, 2))
-        LIMIT 1
-    )
-    AND truck_status IN ('AVAILABLE', 'ON_CALL')
-    ORDER BY RANDOM()
-    LIMIT 1
-) tr;
+FROM SERVICE_REQUESTS sr;
 
 -- ============================================================================
 -- Step 9: Generate Member Transactions

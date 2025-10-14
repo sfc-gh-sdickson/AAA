@@ -58,22 +58,22 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MEMBER_SERVICE_INTELLIGENCE
     members.is_auto_renew AS auto_renew_enabled
       WITH SYNONYMS ('automatic renewal', 'auto renewal')
       COMMENT = 'Whether auto-renewal is enabled',
-    members.member_state AS state
+    members.state AS state
       WITH SYNONYMS ('state', 'location state')
       COMMENT = 'Member state location',
-    members.member_city AS city
+    members.city AS city
       WITH SYNONYMS ('city', 'location city')
       COMMENT = 'Member city location',
-    members.preferred_contact AS preferred_contact_method
+    members.preferred_contact_method AS preferred_contact_method
       WITH SYNONYMS ('contact preference', 'communication method')
       COMMENT = 'Preferred contact method: PHONE, EMAIL, SMS, MAIL',
-    vehicles.vehicle_make AS make
+    vehicles.make AS make
       WITH SYNONYMS ('car make', 'manufacturer')
       COMMENT = 'Vehicle manufacturer',
-    vehicles.vehicle_model AS model
+    vehicles.model AS model
       WITH SYNONYMS ('car model', 'vehicle model')
       COMMENT = 'Vehicle model',
-    vehicles.vehicle_year AS year
+    vehicles.year AS year
       WITH SYNONYMS ('model year', 'car year')
       COMMENT = 'Vehicle model year',
     vehicles.vehicle_type AS vehicle_type
@@ -82,22 +82,22 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MEMBER_SERVICE_INTELLIGENCE
     service_requests.service_type AS service_type
       WITH SYNONYMS ('request type', 'assistance type', 'call type')
       COMMENT = 'Service type: TOWING, BATTERY_JUMP, FLAT_TIRE, LOCKOUT, FUEL_DELIVERY',
-    service_requests.service_priority AS priority
+    service_requests.priority AS priority
       WITH SYNONYMS ('urgency', 'priority level')
       COMMENT = 'Service priority: LOW, MEDIUM, HIGH',
     service_requests.location_type AS location_type
       WITH SYNONYMS ('service location', 'breakdown location')
       COMMENT = 'Location type: HIGHWAY, RESIDENTIAL, PARKING_LOT, COMMERCIAL',
-    service_requests.weather AS weather_condition
+    service_requests.weather_condition AS weather_condition
       WITH SYNONYMS ('weather', 'conditions')
       COMMENT = 'Weather conditions during service',
-    service_requests.service_channel AS channel
+    service_requests.channel AS channel
       WITH SYNONYMS ('request channel', 'contact method')
       COMMENT = 'Service request channel: PHONE, MOBILE_APP, WEB, ALEXA',
     service_fulfillment.service_outcome AS service_outcome
       WITH SYNONYMS ('result', 'completion status')
       COMMENT = 'Service outcome: COMPLETED, TOWED, UNABLE_TO_COMPLETE',
-    service_fulfillment.satisfaction_score AS member_satisfaction_score
+    service_fulfillment.member_satisfaction_score AS member_satisfaction_score
       WITH SYNONYMS ('satisfaction rating', 'customer satisfaction', 'csat')
       COMMENT = 'Member satisfaction score (1-5)'
   )
@@ -179,10 +179,10 @@ CREATE OR REPLACE SEMANTIC VIEW SV_FLEET_OPERATIONS_INTELLIGENCE
     service_technicians.technician_name AS technician_name
       WITH SYNONYMS ('driver name', 'staff name')
       COMMENT = 'Name of service technician',
-    service_technicians.certification AS certification_level
+    service_technicians.certification_level AS certification_level
       WITH SYNONYMS ('skill level', 'certification')
       COMMENT = 'Certification level: BASIC, ADVANCED, MASTER',
-    service_technicians.tech_status AS technician_status
+    service_technicians.technician_status AS technician_status
       WITH SYNONYMS ('employee status', 'staff status')
       COMMENT = 'Technician status: ACTIVE, INACTIVE',
     service_regions.region_name AS region_name
@@ -191,10 +191,10 @@ CREATE OR REPLACE SEMANTIC VIEW SV_FLEET_OPERATIONS_INTELLIGENCE
     service_regions.region_code AS region_code
       WITH SYNONYMS ('area code', 'territory code')
       COMMENT = 'Service region code',
-    service_regions.region_state AS state
+    service_regions.state AS state
       WITH SYNONYMS ('state')
       COMMENT = 'State (California)',
-    service_fulfillment.service_result AS service_outcome
+    service_fulfillment.service_outcome AS service_outcome
       WITH SYNONYMS ('outcome', 'result')
       COMMENT = 'Service outcome'
   )
