@@ -506,9 +506,9 @@ FROM (
     SELECT 
         'HIGH_DEMAND' AS alert_type,
         'HIGH' AS alert_severity,
-        r.region_id,
-        'High Service Demand Alert - ' || r.region_name AS alert_title,
-        'Service requests in ' || r.region_name || ' are ' || demand_ratio || '% above normal. ' ||
+        region_id,
+        'High Service Demand Alert - ' || region_name AS alert_title,
+        'Service requests in ' || region_name || ' are ' || demand_ratio || '% above normal. ' ||
         available_trucks || ' trucks available for ' || pending_requests || ' pending requests.' AS alert_message,
         pending_requests AS affected_services,
         current_requests AS metric_value,
