@@ -1,5 +1,5 @@
 -- ============================================================================
--- AAA Intelligence Agent - Create Snowflake Intelligence Agent
+-- ACE Intelligence Agent - Create Snowflake Intelligence Agent
 -- ============================================================================
 -- Purpose: Create and configure Snowflake Intelligence Agent with:
 --          - Cortex Analyst tools (Semantic Views)
@@ -49,8 +49,8 @@ GRANT USAGE ON PROCEDURE AAA_INTELLIGENCE.ANALYTICS.PREDICT_RESPONSE_SUCCESS(VAR
 -- ============================================================================
 
 CREATE OR REPLACE AGENT AAA_INTELLIGENCE_AGENT
-  COMMENT = 'AAA Intelligence Agent for roadside assistance operations and member services analytics'
-  PROFILE = '{"display_name": "AAA Intelligence Agent", "avatar": "car-icon.png", "color": "red"}'
+  COMMENT = 'ACE Intelligence Agent for roadside assistance operations and member services analytics'
+  PROFILE = '{"display_name": "ACE Intelligence Agent", "avatar": "car-icon.png", "color": "red"}'
   FROM SPECIFICATION
   $$
 models:
@@ -62,16 +62,16 @@ orchestration:
     tokens: 32000
 
 instructions:
-  response: 'You are a specialized analytics assistant for AAA roadside assistance operations. For structured data queries use Cortex Analyst semantic views. For unstructured content use Cortex Search services. For predictions use ML model procedures. Keep responses concise and data-driven.'
+  response: 'You are a specialized analytics assistant for ACE roadside assistance operations. For structured data queries use Cortex Analyst semantic views. For unstructured content use Cortex Search services. For predictions use ML model procedures. Keep responses concise and data-driven.'
   orchestration: 'For metrics and KPIs use Cortex Analyst tools. For service notes, feedback, and incident reports use Cortex Search tools. For forecasting use ML function tools.'
-  system: 'You help analyze AAA member data including service requests, fleet operations, predictive analytics, and customer satisfaction using structured and unstructured data sources.'
+  system: 'You help analyze ACE member data including service requests, fleet operations, predictive analytics, and customer satisfaction using structured and unstructured data sources.'
   sample_questions:
     - question: 'How many active members do we have?'
       answer: 'I will query the member data to count total active members in the system.'
     - question: 'What is our average response time?'
       answer: 'I will use the Fleet Operations Intelligence view to calculate the average response time across all service fulfillments.'
     - question: 'Show me all membership levels available.'
-      answer: 'I will query the member service data to list all distinct membership levels offered by AAA.'
+      answer: 'I will query the member service data to list all distinct membership levels offered by ACE.'
     - question: 'How many service trucks are currently available?'
       answer: 'I will use the Fleet Operations Intelligence view to count trucks with available status.'
     - question: 'What is the average member satisfaction score?'
@@ -83,7 +83,7 @@ instructions:
     - question: 'Analyze member risk profiles and early warning alerts. Show me members with high breakdown risk, active alerts by severity, and recommended preventive outreach.'
       answer: 'I will use the Predictive Analytics Intelligence view to analyze risk scores, early warning alerts, and generate actionable recommendations.'
     - question: 'Analyze correlation between weather conditions and service demand. Show me how rain, snow, and temperature affect request volumes and response times.'
-      answer: 'I will analyze weather condition data with service requests to show the impact of weather patterns on AAA operations and member needs.'
+      answer: 'I will analyze weather condition data with service requests to show the impact of weather patterns on ACE operations and member needs.'
     - question: 'Analyze membership value and retention patterns. Show me lifetime value distribution, renewal rates by membership level, and factors affecting member churn.'
       answer: 'I will use member transaction and service data to analyze value metrics, retention patterns, and identify key drivers of member loyalty.'
     - question: 'Predict service request volume for the next 6 months based on historical patterns.'
@@ -275,7 +275,7 @@ GRANT USAGE ON AGENT AAA_INTELLIGENCE_AGENT TO ROLE SYSADMIN;
 -- Success Message
 -- ============================================================================
 
-SELECT 'AAA Intelligence Agent created successfully! Access it in Snowsight under AI & ML > Agents' AS status;
+SELECT 'ACE Intelligence Agent created successfully! Access it in Snowsight under AI & ML > Agents' AS status;
 
 -- ============================================================================
 -- TROUBLESHOOTING

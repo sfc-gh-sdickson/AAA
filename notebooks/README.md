@@ -1,6 +1,6 @@
-# AAA ML Models Notebook
+# ACE ML Models Notebook
 
-This directory contains the Jupyter notebook for training machine learning models that power the AAA Intelligence Agent's predictive capabilities.
+This directory contains the Jupyter notebook for training machine learning models that power the ACE Intelligence Agent's predictive capabilities.
 
 ## Models
 

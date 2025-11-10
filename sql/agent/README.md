@@ -1,6 +1,6 @@
-# AAA Intelligence Agent Configuration
+# ACE Intelligence Agent Configuration
 
-This directory contains the SQL script to create and configure the AAA Intelligence Agent.
+This directory contains the SQL script to create and configure the ACE Intelligence Agent.
 
 ## File
 

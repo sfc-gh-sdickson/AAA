@@ -1,4 +1,4 @@
-name: aaa-ml-models
+name: ace-ml-models
 channels:
   - https://repo.anaconda.com/pkgs/snowflake
 dependencies:

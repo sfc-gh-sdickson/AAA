@@ -1,5 +1,5 @@
 -- ============================================================================
--- AAA Intelligence Agent - Model Registry Wrapper Functions
+-- ACE Intelligence Agent - Model Registry Wrapper Functions
 -- ============================================================================
 -- Purpose: Create SQL procedures that wrap Model Registry models
 --          so they can be added as tools to the Intelligence Agent

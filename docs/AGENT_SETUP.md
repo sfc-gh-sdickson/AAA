@@ -1,8 +1,8 @@
 <img src="../../Snowflake_Logo.svg" width="200">
 
-# AAA Intelligence Agent - Setup Guide
+# ACE Intelligence Agent - Setup Guide
 
-This guide walks through configuring a Snowflake Intelligence agent for AAA's roadside assistance and member intelligence solution.
+This guide walks through configuring a Snowflake Intelligence agent for ACE's roadside assistance and member intelligence solution.
 
 ---
 
@@ -110,7 +110,7 @@ Execute the SQL files in the following sequence:
 **Basic Settings:**
 ```yaml
 Name: AAA_Intelligence_Agent
-Description: AI agent for analyzing AAA roadside assistance operations, member services, and fleet management
+Description: AI agent for analyzing ACE roadside assistance operations, member services, and fleet management
 ```
 
 **Data Sources (Semantic Views):**
@@ -124,7 +124,7 @@ Add the following semantic views:
 
 **Instructions (System Prompt):**
 ```
-You are an AI intelligence agent for AAA (American Automobile Association), California's largest roadside assistance provider.
+You are an AI intelligence agent for ACE (Automobile Club Experience), California's largest roadside assistance provider.
 
 Your role is to analyze:
 1. Member Services: Roadside assistance requests, response times, satisfaction scores
@@ -206,7 +206,7 @@ Data Context:
 
 Start with simple questions to verify connectivity:
 
-1. **"How many AAA members do we have?"**
+1. **"How many ACE members do we have?"**
    - Should query SV_MEMBER_SERVICE_INTELLIGENCE
    - Expected: ~100,000 members
 
@@ -370,7 +370,7 @@ Your agent is successfully configured when:
 ## Support Resources
 
 - **Snowflake Documentation**: https://docs.snowflake.com/en/sql-reference/sql/create-semantic-view
-- **AAA Website**: https://www.aaa.com
+- **ACE Website**: https://www.ace.com
 - **Snowflake Community**: https://community.snowflake.com
 
 ---

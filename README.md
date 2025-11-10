@@ -1,12 +1,12 @@
-# AAA Intelligence Agent
+# ACE Intelligence Agent
 
 <img src="Snowflake_Logo.svg" width="150">
 
-A Snowflake Intelligence solution for AAA (American Automobile Association) California, providing AI-powered analytics for roadside assistance operations, member services, and fleet management.
+A Snowflake Intelligence solution for ACE (Automobile Club Experience) California, providing AI-powered analytics for roadside assistance operations, member services, and fleet management.
 
 ## 🚗 Overview
 
-The AAA Intelligence Agent leverages Snowflake's Cortex AI capabilities to provide natural language access to comprehensive roadside assistance data. Ask questions in plain English and get instant insights about operations, members, and predictive analytics.
+The ACE Intelligence Agent leverages Snowflake's Cortex AI capabilities to provide natural language access to comprehensive roadside assistance data. Ask questions in plain English and get instant insights about operations, members, and predictive analytics.
 
 ## 🚀 Quick Start
 
@@ -42,7 +42,7 @@ The AAA Intelligence Agent leverages Snowflake's Cortex AI capabilities to provi
 ## 📁 Project Structure
 
 ```
-AAA/
+ACE/
 ├── sql/                     # SQL scripts
 │   ├── setup/              # Database and table creation
 │   ├── data/               # Sample data generation
@@ -74,7 +74,7 @@ AAA/
 
 ## 📈 Data Volumes
 
-- 100,000 AAA members
+- 100,000 ACE members
 - 150,000 vehicles
 - 2,000,000 service requests
 - 500 technicians
@@ -94,7 +94,7 @@ AAA/
 
 ## 📝 License
 
-© 2025 AAA Automobile Club of California. All rights reserved.
+© 2025 ACE Automobile Club Experience of California. All rights reserved.
 
 ---
 

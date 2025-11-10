@@ -1,8 +1,8 @@
 <img src="../../Snowflake_Logo.svg" width="200">
 
-# AAA Intelligence Agent - Complex Questions
+# ACE Intelligence Agent - Complex Questions
 
-These 10 complex questions demonstrate the intelligence agent's ability to analyze AAA's member data, service operations, fleet management, predictive analytics, and early warning systems across multiple dimensions.
+These 10 complex questions demonstrate the intelligence agent's ability to analyze ACE's member data, service operations, fleet management, predictive analytics, and early warning systems across multiple dimensions.
 
 ---
 
@@ -317,7 +317,7 @@ These questions test the agent's ability to:
 11. **Semantic search** - understanding intent in technician notes and feedback
 12. **Information synthesis** - combining structured and unstructured insights
 
-These questions reflect realistic business intelligence needs for AAA's roadside assistance operations, member services, and fleet management.
+These questions reflect realistic business intelligence needs for ACE's roadside assistance operations, member services, and fleet management.
 
 ---
 
