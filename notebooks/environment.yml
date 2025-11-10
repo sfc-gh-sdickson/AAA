@@ -2,12 +2,9 @@ name: ace-ml-models
 channels:
   - https://repo.anaconda.com/pkgs/snowflake
 dependencies:
-  - python=3.10
-  - pip
-  - pip:
-    - snowflake-ml-python
-    - scikit-learn
-    - xgboost
-    - matplotlib
-    - pandas
-    - numpy
+  - matplotlib=*
+  - pandas=2.2.3
+  - scikit-learn=*
+  - snowflake-ml-python=*
+  - snowflake-snowpark-python=*
+  - xgboost=*
