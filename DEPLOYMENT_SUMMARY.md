@@ -40,8 +40,16 @@ aaa-intelligence-agent/
 │   │   └── 05_create_semantic_views.sql        ✅ Semantic views (VERIFIED)
 │   ├── search/
 │   │   └── 06_create_cortex_search.sql         ✅ Cortex Search services (VERIFIED)
+│   ├── ml/
+│   │   └── 07_create_model_wrapper_functions.sql ✅ ML model procedures
+│   ├── agent/
+│   │   └── 08_create_intelligence_agent.sql    ✅ Agent with AUTO model
+├── notebooks/
+│   ├── aaa_ml_models.ipynb                     ✅ ML model training notebook
+│   ├── environment.yml                         ✅ Conda environment config
+│   └── README.md                               ✅ Notebook documentation
 ├── docs/
-│   ├── questions.md                            ✅ 20 complex test questions
+│   ├── questions.md                            ✅ 25 test questions (inc. ML)
 │   ├── AGENT_SETUP.md                          ✅ Complete setup guide
 │   └── README.md                               ✅ Comprehensive documentation
 ├── README.md                                    ✅ Main documentation
@@ -134,7 +142,37 @@ aaa-intelligence-agent/
 ✅ Change tracking enabled on all source tables
 ✅ Verified against: https://docs.snowflake.com/en/sql-reference/sql/create-cortex-search
 
-### 6. Test Questions (20 questions)
+### 6. ML Models (3 models - notebook + wrappers)
+- `SERVICE_VOLUME_PREDICTOR`
+  - Type: Linear Regression
+  - Purpose: Predict monthly service request volume
+  - Features: Historical patterns, seasonality, weather
+  
+- `MEMBER_CHURN_PREDICTOR`
+  - Type: Random Forest
+  - Purpose: Identify members at risk of cancellation
+  - Features: Usage patterns, satisfaction, tenure
+  
+- `RESPONSE_SUCCESS_PREDICTOR`
+  - Type: Logistic Regression
+  - Purpose: Predict service completion within SLA
+  - Features: Conditions, resources, technician skills
+
+### 7. ML Wrapper Functions (sql/ml/)
+- Python stored procedures for model invocation
+- JSON response format
+- Parameterized predictions
+- Integration with Intelligence Agent
+
+### 8. Intelligence Agent (AUTO model)
+- **Model Selection**: AUTO (optimal performance)
+- **Tools**: 9 total (3 Analyst + 3 Search + 3 ML)
+- **Question Types**:
+  - 5 Simple questions
+  - 5 Complex analytical questions
+  - 5 ML prediction questions
+
+### 9. Test Questions (25 questions)
 **Structured Data Questions (1-10)**:
 1. High-Risk Member Identification for Proactive Outreach
 2. Fleet Optimization During Peak Demand Periods
@@ -159,10 +197,21 @@ aaa-intelligence-agent/
 19. Emergency Response Protocols
 20. Cross-Regional Knowledge Sharing
 
-### 7. Documentation (3 files)
+**ML Prediction Questions (21-25)**:
+21. Service Volume Forecasting for Capacity Planning
+22. Member Churn Risk Assessment by Segment
+23. Response Success Prediction for Emergency Services
+24. Seasonal Demand Forecasting for Specific Services
+25. Upgrade Recommendations Based on Usage Patterns
+
+### 10. Documentation (7 files)
 - **README.md**: Complete project overview, features, architecture
 - **AGENT_SETUP.md**: Step-by-step setup instructions
-- **questions.md**: 20 complex test questions with explanations
+- **questions.md**: 25 test questions with explanations
+- **notebooks/README.md**: ML model notebook guide
+- **sql/agent/README.md**: Agent configuration guide
+- **SQL_VALIDATION_REPORT.md**: Comprehensive SQL verification report
+- **DEPLOYMENT_SUMMARY.md**: This deployment summary
 
 ---
 
@@ -221,19 +270,25 @@ All SQL syntax has been verified against official Snowflake documentation:
 4. sql/views/04_create_views.sql                 (< 5 seconds)
 5. sql/views/05_create_semantic_views.sql        (< 5 seconds)
 6. sql/search/06_create_cortex_search.sql        (5-10 minutes)
+7. sql/ml/07_create_model_wrapper_functions.sql  (< 5 seconds)
+8. sql/agent/08_create_intelligence_agent.sql    (< 5 seconds)
 ```
 
 **Total Setup Time**: Approximately 20-30 minutes
 
-### Step 2: Configure Agent
-Follow detailed instructions in `docs/AGENT_SETUP.md`:
-1. Create Snowflake Intelligence Agent in Snowsight
-2. Add semantic views as data sources
-3. Configure Cortex Search services
-4. Set system prompt
-5. Test with sample questions
+### Step 2: Optional - Train ML Models
+1. Open Snowsight → Projects → Notebooks
+2. Upload `notebooks/aaa_ml_models.ipynb`
+3. Run all cells to train and register models
+4. Models will be available for predictive queries
 
-### Step 3: Verify Installation
+### Step 3: Test the Agent
+1. Go to AI & ML → Agents in Snowsight
+2. Select AAA_INTELLIGENCE_AGENT
+3. Click "Chat" to start testing
+4. Try simple, complex, and ML prediction questions
+
+### Step 4: Verify Installation
 ```sql
 -- Check semantic views
 SHOW SEMANTIC VIEWS IN SCHEMA AAA_INTELLIGENCE.ANALYTICS;
@@ -286,7 +341,9 @@ SELECT PARSE_JSON(
 4. **Hybrid Architecture**: Combines structured tables with unstructured search
 5. **RAG-Enabled**: Cortex Search enables retrieval augmented generation
 6. **Predictive Focus**: Includes early warning and predictive analytics
-7. **Well-Documented**: Complete setup guide and test questions
+7. **Machine Learning**: 3 ML models for forecasting and predictions
+8. **AUTO Model Agent**: Intelligent model selection for optimal performance
+9. **Well-Documented**: Complete setup guide and 25 test questions
 
 ---
 
@@ -323,8 +380,11 @@ SELECT PARSE_JSON(
 ---
 
 **Created**: October 14, 2025  
-**Version**: 1.0  
-**Total Files Created**: 10  
-**Total Code Lines**: ~3,000+  
+**Updated**: November 10, 2025  
+**Version**: 2.0 (with ML and Agent)  
+**Total Files Created**: 16  
+**Total Code Lines**: ~4,000+  
 **Syntax Verification**: 100% Complete  
+**ML Models**: 3 Predictive Models  
+**Agent Model**: AUTO  
 **Ready to Deploy**: YES ✅

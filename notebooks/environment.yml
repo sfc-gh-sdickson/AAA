@@ -1,0 +1,13 @@
+name: aaa-ml-models
+channels:
+  - https://repo.anaconda.com/pkgs/snowflake
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - snowflake-ml-python
+    - scikit-learn
+    - xgboost
+    - matplotlib
+    - pandas
+    - numpy
