@@ -49,3 +49,23 @@ After running this notebook:
    - "Predict service volume for next quarter"
    - "Which members are likely to cancel?"
    - "What's the success probability for emergency towing in bad weather?"
+
+## Troubleshooting Snowflake Version Conflicts
+
+If you see a **"conflict"** error when opening the notebook in Snowsight, this is due to Snowflake's internal version tracking getting out of sync. To resolve:
+
+**Option 1: Force Refresh (Easiest)**
+1. Close the notebook tab in Snowsight
+2. Clear browser cache (Ctrl+Shift+Delete)
+3. Log out and log back into Snowsight
+4. Open the notebook again
+
+**Option 2: Delete and Re-import**
+1. In Snowsight, navigate to Projects → Notebooks
+2. Find `ace_ml_models.ipynb`
+3. Click the "..." menu → Delete (this only removes Snowflake's tracked version)
+4. Navigate to Git Files → `/notebooks/ace_ml_models.ipynb`
+5. Click "Import as Notebook"
+6. The notebook will open without conflicts
+
+**Note**: The notebook code is correct - this conflict is purely a Snowflake UI caching issue.
