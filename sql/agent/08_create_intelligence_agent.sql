@@ -48,9 +48,9 @@ GRANT USAGE ON PROCEDURE AAA_INTELLIGENCE.ANALYTICS.PREDICT_RESPONSE_SUCCESS(VAR
 -- Step 2: Create Snowflake Intelligence Agent
 -- ============================================================================
 
-CREATE OR REPLACE AGENT AAA_INTELLIGENCE_AGENT
+CREATE OR REPLACE AGENT ACE_INTELLIGENCE_AGENT
   COMMENT = 'ACE Intelligence Agent for roadside assistance operations and member services analytics'
-  PROFILE = '{"display_name": "ACE Intelligence Agent", "avatar": "car-icon.png", "color": "red"}'
+  PROFILE = '{"display_name": "AAA Intelligence Agent", "avatar": "car-icon.png", "color": "red"}'
   FROM SPECIFICATION
   $$
 models:
@@ -218,13 +218,13 @@ tool_resources:
 -- ============================================================================
 
 -- Show created agent
-SHOW AGENTS LIKE 'AAA_INTELLIGENCE_AGENT';
+SHOW AGENTS LIKE 'ACE_INTELLIGENCE_AGENT';
 
 -- Describe agent configuration
-DESCRIBE AGENT AAA_INTELLIGENCE_AGENT;
+DESCRIBE AGENT ACE_INTELLIGENCE_AGENT;
 
 -- Grant usage
-GRANT USAGE ON AGENT AAA_INTELLIGENCE_AGENT TO ROLE SYSADMIN;
+GRANT USAGE ON AGENT ACE_INTELLIGENCE_AGENT TO ROLE SYSADMIN;
 
 -- ============================================================================
 -- Step 4: Test Agent (Examples)
