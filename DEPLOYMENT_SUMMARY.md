@@ -25,36 +25,9 @@ This document summarizes the complete ACE Automobile Club Experience of Californ
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-```
-ace-intelligence-agent/
-├── sql/
-│   ├── setup/
-│   │   ├── 01_database_and_schema.sql          ✅ Database, schemas, warehouse
-│   │   └── 02_create_tables.sql                ✅ All table definitions
-│   ├── data/
-│   │   └── 03_generate_synthetic_data.sql      ✅ 2M+ rows of realistic data
-│   ├── views/
-│   │   ├── 04_create_views.sql                 ✅ Analytical views
-│   │   └── 05_create_semantic_views.sql        ✅ Semantic views (VERIFIED)
-│   ├── search/
-│   │   └── 06_create_cortex_search.sql         ✅ Cortex Search services (VERIFIED)
-│   ├── ml/
-│   │   └── 07_create_model_wrapper_functions.sql ✅ ML model procedures
-│   ├── agent/
-│   │   └── 08_create_intelligence_agent.sql    ✅ Agent with AUTO model
-├── notebooks/
-│   ├── aaa_ml_models.ipynb                     ✅ ML model training notebook
-│   ├── environment.yml                         ✅ Conda environment config
-│   └── README.md                               ✅ Notebook documentation
-├── docs/
-│   ├── questions.md                            ✅ 25 test questions (inc. ML)
-│   ├── AGENT_SETUP.md                          ✅ Complete setup guide
-│   └── README.md                               ✅ Comprehensive documentation
-├── README.md                                    ✅ Main documentation
-└── DEPLOYMENT_SUMMARY.md                       ✅ This file
-```
+<img src="docs/project_structure.svg" width="100%">
 
 ---
 

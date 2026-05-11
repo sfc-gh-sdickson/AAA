@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="750" viewBox="0 0 900 750">
+  <rect width="900" height="750" fill="white"/>
+
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="106%" height="110%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>
+      <feComponentTransfer in="offsetBlur" result="shadow">
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="50" y="15" width="800" height="50" rx="8" fill="#1B9CD9" filter="url(#shadow)"/>
+  <text x="450" y="47" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial, sans-serif">ACE Intelligence Agent - Deployment Flow</text>
+
+  <rect x="50" y="80" width="800" height="70" rx="6" fill="#F8FAFE" stroke="#29B5E8" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="80" cy="115" r="18" fill="#29B5E8"/>
+  <text x="80" y="121" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Arial, sans-serif">1</text>
+  <text x="110" y="103" font-size="12" font-weight="bold" fill="#1B6B8E" font-family="Arial, sans-serif">Database &amp; Schema Setup</text>
+  <text x="110" y="120" font-size="10" fill="#555" font-family="Arial, sans-serif">sql/setup/01_database_and_schema.sql</text>
+  <text x="110" y="137" font-size="9" fill="#888" font-family="Arial, sans-serif">Creates AAA_INTELLIGENCE database, RAW schema, warehouse configuration</text>
+  <rect x="650" y="95" width="170" height="35" rx="4" fill="#E8F4FD" stroke="#29B5E8" stroke-width="1" filter="url(#shadow)"/>
+  <text x="735" y="117" text-anchor="middle" font-size="9" fill="#1B6B8E" font-family="Arial, sans-serif">DB + Schema + Warehouse</text>
+
+  <polygon points="445,152 455,152 450,168" fill="#4A90D9"/>
+
+  <rect x="50" y="172" width="800" height="70" rx="6" fill="#F8FAFE" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="80" cy="207" r="18" fill="#4A90D9"/>
+  <text x="80" y="213" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Arial, sans-serif">2</text>
+  <text x="110" y="195" font-size="12" font-weight="bold" fill="#2D5F8A" font-family="Arial, sans-serif">Table Creation</text>
+  <text x="110" y="212" font-size="10" fill="#555" font-family="Arial, sans-serif">sql/setup/02_create_tables.sql</text>
+  <text x="110" y="229" font-size="9" fill="#888" font-family="Arial, sans-serif">16 tables: Members, Vehicles, Service Requests, Fleet, Predictions, Unstructured</text>
+  <rect x="650" y="187" width="170" height="35" rx="4" fill="#F0F7FF" stroke="#4A90D9" stroke-width="1" filter="url(#shadow)"/>
+  <text x="735" y="209" text-anchor="middle" font-size="9" fill="#2D5F8A" font-family="Arial, sans-serif">16 Tables Created</text>
+
+  <polygon points="445,244 455,244 450,260" fill="#4A90D9"/>
+
+  <rect x="50" y="264" width="800" height="70" rx="6" fill="#F8F5FF" stroke="#7B61FF" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="80" cy="299" r="18" fill="#7B61FF"/>
+  <text x="80" y="305" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Arial, sans-serif">3</text>
+  <text x="110" y="287" font-size="12" font-weight="bold" fill="#4B3D99" font-family="Arial, sans-serif">Synthetic Data Generation</text>
+  <text x="110" y="304" font-size="10" fill="#555" font-family="Arial, sans-serif">sql/data/03_generate_synthetic_data.sql</text>
+  <text x="110" y="321" font-size="9" fill="#888" font-family="Arial, sans-serif">5.3M+ rows: 100K members, 2M service requests, 500K notes, weather, predictions</text>
+  <rect x="650" y="279" width="170" height="35" rx="4" fill="#F5F0FF" stroke="#7B61FF" stroke-width="1" filter="url(#shadow)"/>
+  <text x="735" y="301" text-anchor="middle" font-size="9" fill="#4B3D99" font-family="Arial, sans-serif">5.3M+ Rows Inserted</text>
+
+  <polygon points="445,336 455,336 450,352" fill="#4A90D9"/>
+
+  <rect x="50" y="356" width="800" height="70" rx="6" fill="#F0FFF4" stroke="#28A745" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="80" cy="391" r="18" fill="#28A745"/>
+  <text x="80" y="397" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Arial, sans-serif">4</text>
+  <text x="110" y="379" font-size="12" font-weight="bold" fill="#1B6B2E" font-family="Arial, sans-serif">Analytical Views</text>
+  <text x="110" y="396" font-size="10" fill="#555" font-family="Arial, sans-serif">sql/views/04_create_views.sql</text>
+  <text x="110" y="413" font-size="9" fill="#888" font-family="Arial, sans-serif">8 views: Member 360, Fleet Analytics, Demand Patterns, Predictive Insights, etc.</text>
+  <rect x="650" y="371" width="170" height="35" rx="4" fill="#F0FFF4" stroke="#28A745" stroke-width="1" filter="url(#shadow)"/>
+  <text x="735" y="393" text-anchor="middle" font-size="9" fill="#1B6B2E" font-family="Arial, sans-serif">8 Views Created</text>
+
+  <polygon points="445,428 455,428 450,444" fill="#4A90D9"/>
+
+  <rect x="50" y="448" width="800" height="70" rx="6" fill="#FFF8F0" stroke="#E8830C" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="80" cy="483" r="18" fill="#E8830C"/>
+  <text x="80" y="489" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Arial, sans-serif">5</text>
+  <text x="110" y="471" font-size="12" font-weight="bold" fill="#8B4E09" font-family="Arial, sans-serif">Semantic Views + Cortex Search</text>
+  <text x="110" y="488" font-size="10" fill="#555" font-family="Arial, sans-serif">sql/views/05_create_semantic_views.sql + sql/search/06_create_cortex_search.sql</text>
+  <text x="110" y="505" font-size="9" fill="#888" font-family="Arial, sans-serif">3 semantic views (member, fleet, predictive) + 3 search services (notes, feedback, reports)</text>
+  <rect x="650" y="463" width="170" height="35" rx="4" fill="#FFF8F0" stroke="#E8830C" stroke-width="1" filter="url(#shadow)"/>
+  <text x="735" y="485" text-anchor="middle" font-size="9" fill="#8B4E09" font-family="Arial, sans-serif">3 SV + 3 Search Svc</text>
+
+  <polygon points="445,520 455,520 450,536" fill="#4A90D9"/>
+
+  <rect x="50" y="540" width="800" height="70" rx="6" fill="#FFF0F6" stroke="#D63384" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="80" cy="575" r="18" fill="#D63384"/>
+  <text x="80" y="581" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Arial, sans-serif">6</text>
+  <text x="110" y="563" font-size="12" font-weight="bold" fill="#8B1A5C" font-family="Arial, sans-serif">ML Model Training (Optional)</text>
+  <text x="110" y="580" font-size="10" fill="#555" font-family="Arial, sans-serif">notebooks/ace_ml_models.ipynb + sql/ml/07_create_model_wrapper_functions.sql</text>
+  <text x="110" y="597" font-size="9" fill="#888" font-family="Arial, sans-serif">Train 3 models (volume, churn, response success) - Register in Model Registry - Create SQL wrappers</text>
+  <rect x="650" y="555" width="170" height="35" rx="4" fill="#FFF0F6" stroke="#D63384" stroke-width="1" filter="url(#shadow)"/>
+  <text x="735" y="577" text-anchor="middle" font-size="9" fill="#8B1A5C" font-family="Arial, sans-serif">3 Models Deployed</text>
+
+  <polygon points="445,612 455,612 450,628" fill="#28A745"/>
+
+  <rect x="50" y="632" width="800" height="70" rx="6" fill="#D4EDDA" stroke="#28A745" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="80" cy="667" r="18" fill="#28A745"/>
+  <text x="80" y="673" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Arial, sans-serif">7</text>
+  <text x="110" y="655" font-size="12" font-weight="bold" fill="#1B6B2E" font-family="Arial, sans-serif">Intelligence Agent Creation</text>
+  <text x="110" y="672" font-size="10" fill="#555" font-family="Arial, sans-serif">sql/agent/08_create_intelligence_agent.sql</text>
+  <text x="110" y="689" font-size="9" fill="#888" font-family="Arial, sans-serif">Configure agent with 9 tools: 3 Analyst + 3 Search + 3 ML wrapper functions - Production Ready</text>
+  <rect x="650" y="647" width="170" height="35" rx="4" fill="#28A745" stroke="#1B6B2E" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="735" y="669" text-anchor="middle" font-size="10" font-weight="bold" fill="white" font-family="Arial, sans-serif">DEPLOYED</text>
+
+  <text x="450" y="730" text-anchor="middle" font-size="10" fill="#888" font-family="Arial, sans-serif">Execute scripts sequentially (1-7) | Estimated deployment time: 15-30 minutes</text>
+</svg>

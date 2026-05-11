@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720">
+  <rect width="900" height="720" fill="white"/>
+
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="106%" height="110%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>
+      <feComponentTransfer in="offsetBlur" result="shadow">
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="50" y="15" width="800" height="50" rx="8" fill="#7B61FF" filter="url(#shadow)"/>
+  <text x="450" y="47" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial, sans-serif">ACE Intelligence Agent - ML Model Pipeline</text>
+
+  <rect x="50" y="80" width="800" height="100" rx="6" fill="#F8FAFE" stroke="#29B5E8" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="70" y="100" font-size="12" font-weight="bold" fill="#1B6B8E" font-family="Arial, sans-serif">PHASE 1: Data Extraction &amp; Preparation</text>
+  <text x="70" y="115" font-size="9" fill="#888" font-family="Arial, sans-serif">Snowpark Session - Query Source Tables</text>
+
+  <rect x="80" y="125" width="200" height="40" rx="4" fill="white" stroke="#29B5E8" stroke-width="1" filter="url(#shadow)"/>
+  <text x="180" y="143" text-anchor="middle" font-size="9" font-weight="bold" fill="#333" font-family="Arial, sans-serif">SERVICE_REQUESTS</text>
+  <text x="180" y="157" text-anchor="middle" font-size="8" fill="#888" font-family="Arial, sans-serif">2M rows: timestamps, types, SLA</text>
+
+  <rect x="300" y="125" width="200" height="40" rx="4" fill="white" stroke="#29B5E8" stroke-width="1" filter="url(#shadow)"/>
+  <text x="400" y="143" text-anchor="middle" font-size="9" font-weight="bold" fill="#333" font-family="Arial, sans-serif">MEMBERS + VEHICLES</text>
+  <text x="400" y="157" text-anchor="middle" font-size="8" fill="#888" font-family="Arial, sans-serif">100K members, 150K vehicles</text>
+
+  <rect x="520" y="125" width="200" height="40" rx="4" fill="white" stroke="#29B5E8" stroke-width="1" filter="url(#shadow)"/>
+  <text x="620" y="143" text-anchor="middle" font-size="9" font-weight="bold" fill="#333" font-family="Arial, sans-serif">SERVICE_FULFILLMENT</text>
+  <text x="620" y="157" text-anchor="middle" font-size="8" fill="#888" font-family="Arial, sans-serif">2M rows: outcomes, ratings</text>
+
+  <rect x="740" y="125" width="80" height="40" rx="4" fill="white" stroke="#29B5E8" stroke-width="1" filter="url(#shadow)"/>
+  <text x="780" y="148" text-anchor="middle" font-size="8" fill="#333" font-family="Arial, sans-serif">WEATHER</text>
+
+  <polygon points="445,182 455,182 450,200" fill="#7B61FF"/>
+
+  <rect x="50" y="205" width="800" height="90" rx="6" fill="#FFF8FC" stroke="#D63384" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="70" y="225" font-size="12" font-weight="bold" fill="#8B1A5C" font-family="Arial, sans-serif">PHASE 2: Feature Engineering</text>
+  <text x="70" y="240" font-size="9" fill="#888" font-family="Arial, sans-serif">Snowpark DataFrames - Window Functions, Aggregations, Encoding</text>
+
+  <rect x="80" y="252" width="220" height="30" rx="4" fill="white" stroke="#D63384" stroke-width="1" filter="url(#shadow)"/>
+  <text x="190" y="271" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">Time-based: hour, day, month, seasonality</text>
+
+  <rect x="320" y="252" width="220" height="30" rx="4" fill="white" stroke="#D63384" stroke-width="1" filter="url(#shadow)"/>
+  <text x="430" y="271" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">Aggregations: rolling avg, counts, rates</text>
+
+  <rect x="560" y="252" width="220" height="30" rx="4" fill="white" stroke="#D63384" stroke-width="1" filter="url(#shadow)"/>
+  <text x="670" y="271" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">Categorical: region, type, tier encoding</text>
+
+  <polygon points="445,297 455,297 450,315" fill="#7B61FF"/>
+
+  <rect x="50" y="320" width="800" height="170" rx="6" fill="#F5F0FF" stroke="#7B61FF" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="70" y="340" font-size="12" font-weight="bold" fill="#4B3D99" font-family="Arial, sans-serif">PHASE 3: Model Training (Snowpark ML)</text>
+  <text x="70" y="355" font-size="9" fill="#888" font-family="Arial, sans-serif">Train/Test Split - Pipeline (Preprocessor + Estimator) - Cross-validation</text>
+
+  <rect x="80" y="365" width="220" height="110" rx="5" fill="white" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="80" y="365" width="220" height="25" rx="5" fill="#E8F4FD"/>
+  <text x="190" y="382" text-anchor="middle" font-size="10" font-weight="bold" fill="#1B6B8E" font-family="Arial, sans-serif">Volume Forecasting</text>
+  <text x="100" y="403" font-size="9" fill="#333" font-family="Arial, sans-serif">Algorithm: Gradient Boosting</text>
+  <text x="100" y="418" font-size="9" fill="#333" font-family="Arial, sans-serif">Target: daily_request_count</text>
+  <text x="100" y="433" font-size="9" fill="#333" font-family="Arial, sans-serif">Features: temporal + regional</text>
+  <text x="100" y="448" font-size="9" fill="#333" font-family="Arial, sans-serif">Metric: RMSE, MAE</text>
+  <text x="100" y="465" font-size="9" font-weight="bold" fill="#28A745" font-family="Arial, sans-serif">Task: TABULAR_REGRESSION</text>
+
+  <rect x="330" y="365" width="220" height="110" rx="5" fill="white" stroke="#D63384" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="330" y="365" width="220" height="25" rx="5" fill="#FFF0F6"/>
+  <text x="440" y="382" text-anchor="middle" font-size="10" font-weight="bold" fill="#8B1A5C" font-family="Arial, sans-serif">Churn Prediction</text>
+  <text x="350" y="403" font-size="9" fill="#333" font-family="Arial, sans-serif">Algorithm: Random Forest</text>
+  <text x="350" y="418" font-size="9" fill="#333" font-family="Arial, sans-serif">Target: will_churn (binary)</text>
+  <text x="350" y="433" font-size="9" fill="#333" font-family="Arial, sans-serif">Features: engagement + tenure</text>
+  <text x="350" y="448" font-size="9" fill="#333" font-family="Arial, sans-serif">Metric: AUC-ROC, Precision</text>
+  <text x="350" y="465" font-size="9" font-weight="bold" fill="#28A745" font-family="Arial, sans-serif">Task: BINARY_CLASSIFICATION</text>
+
+  <rect x="580" y="365" width="240" height="110" rx="5" fill="white" stroke="#28A745" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="580" y="365" width="240" height="25" rx="5" fill="#F0FFF4"/>
+  <text x="700" y="382" text-anchor="middle" font-size="10" font-weight="bold" fill="#1B6B2E" font-family="Arial, sans-serif">Response Success</text>
+  <text x="600" y="403" font-size="9" fill="#333" font-family="Arial, sans-serif">Algorithm: XGBoost Classifier</text>
+  <text x="600" y="418" font-size="9" fill="#333" font-family="Arial, sans-serif">Target: successful_resolution</text>
+  <text x="600" y="433" font-size="9" fill="#333" font-family="Arial, sans-serif">Features: request + weather + fleet</text>
+  <text x="600" y="448" font-size="9" fill="#333" font-family="Arial, sans-serif">Metric: F1, Accuracy</text>
+  <text x="600" y="465" font-size="9" font-weight="bold" fill="#28A745" font-family="Arial, sans-serif">Task: BINARY_CLASSIFICATION</text>
+
+  <polygon points="445,492 455,492 450,510" fill="#7B61FF"/>
+
+  <rect x="50" y="515" width="800" height="80" rx="6" fill="#FFFFF0" stroke="#E8830C" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="70" y="535" font-size="12" font-weight="bold" fill="#8B4E09" font-family="Arial, sans-serif">PHASE 4: Model Registry (Snowflake ML)</text>
+  <text x="70" y="550" font-size="9" fill="#888" font-family="Arial, sans-serif">Registry.log_model() - Version Management - Metadata Storage</text>
+
+  <rect x="80" y="560" width="200" height="25" rx="4" fill="white" stroke="#E8830C" stroke-width="1" filter="url(#shadow)"/>
+  <text x="180" y="577" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">log_model(model, metrics)</text>
+
+  <rect x="300" y="560" width="200" height="25" rx="4" fill="white" stroke="#E8830C" stroke-width="1" filter="url(#shadow)"/>
+  <text x="400" y="577" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">target: WAREHOUSE platform</text>
+
+  <rect x="520" y="560" width="200" height="25" rx="4" fill="white" stroke="#E8830C" stroke-width="1" filter="url(#shadow)"/>
+  <text x="620" y="577" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">sample_input - schema inference</text>
+
+  <polygon points="445,597 455,597 450,615" fill="#7B61FF"/>
+
+  <rect x="50" y="620" width="800" height="80" rx="6" fill="#F0FFF4" stroke="#28A745" stroke-width="2" filter="url(#shadow)"/>
+  <text x="70" y="640" font-size="12" font-weight="bold" fill="#1B6B2E" font-family="Arial, sans-serif">PHASE 5: SQL Inference Functions - Agent Integration</text>
+  <text x="70" y="655" font-size="9" fill="#888" font-family="Arial, sans-serif">UDF Wrappers - Intelligence Agent Tools</text>
+
+  <rect x="80" y="665" width="220" height="25" rx="4" fill="white" stroke="#28A745" stroke-width="1" filter="url(#shadow)"/>
+  <text x="190" y="682" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">PREDICT_SERVICE_VOLUME(params)</text>
+
+  <rect x="320" y="665" width="220" height="25" rx="4" fill="white" stroke="#28A745" stroke-width="1" filter="url(#shadow)"/>
+  <text x="430" y="682" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">PREDICT_MEMBER_CHURN(params)</text>
+
+  <rect x="560" y="665" width="220" height="25" rx="4" fill="white" stroke="#28A745" stroke-width="1" filter="url(#shadow)"/>
+  <text x="670" y="682" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">PREDICT_RESPONSE_SUCCESS(params)</text>
+
+  <text x="450" y="718" text-anchor="middle" font-size="10" fill="#888" font-family="Arial, sans-serif">Snowpark ML Pipeline | Model Registry | SQL UDF Inference | Intelligence Agent Tools</text>
+</svg>

@@ -20,33 +20,7 @@ The ACE Intelligence Agent leverages Snowflake's Cortex AI capabilities to provi
 
 ## 🏗️ Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                  Snowflake Intelligence Agent                │
-├─────────────────────────────────────────────────────────────┤
-│                         Cortex AI                           │
-├─────────────────────────────────────────────────────────────┤
-│  Semantic Views          │        Cortex Search            │
-├──────────────────────────┼─────────────────────────────────┤
-│ • Member Service Intel   │ • Service Notes Search         │
-│ • Fleet Operations Intel │ • Member Feedback Search      │
-│ • Predictive Analytics   │ • Incident Reports Search     │
-├──────────────────────────┴─────────────────────────────────┤
-│                    Analytical Views                         │
-├─────────────────────────────────────────────────────────────┤
-│ • V_MEMBER_360          • V_DEMAND_PATTERNS               │
-│ • V_SERVICE_PERFORMANCE • V_PREDICTIVE_INSIGHTS           │
-│ • V_FLEET_ANALYTICS     • V_ALERT_DASHBOARD               │
-│ • V_REGIONAL_PERFORMANCE• V_REVENUE_IMPACT                │
-├─────────────────────────────────────────────────────────────┤
-│                      Raw Data Tables                        │
-├─────────────────────────────────────────────────────────────┤
-│ MEMBERS │ VEHICLES │ SERVICE_REQUESTS │ SERVICE_FULFILLMENT│
-│ SERVICE_TECHNICIANS │ SERVICE_TRUCKS │ SERVICE_REGIONS    │
-│ WEATHER_CONDITIONS │ PREDICTIVE_SCORES │ EARLY_WARNINGS   │
-│ SERVICE_NOTES │ MEMBER_FEEDBACK │ INCIDENT_REPORTS        │
-└─────────────────────────────────────────────────────────────┘
-```
+<img src="architecture.svg" width="100%">
 
 ---
 
@@ -103,27 +77,8 @@ Ask questions in plain English:
 
 ---
 
-## 📁 Repository Structure
-
-```
-ACE/
-├── sql/
-│   ├── setup/
-│   │   ├── 01_database_and_schema.sql      # Database initialization
-│   │   └── 02_create_tables.sql            # Table definitions
-│   ├── data/
-│   │   └── 03_generate_synthetic_data.sql  # Sample data generation
-│   ├── views/
-│   │   ├── 04_create_views.sql             # Analytical views
-│   │   └── 05_create_semantic_views.sql    # Semantic views (verified)
-│   └── search/
-│       └── 06_create_cortex_search.sql     # Cortex Search services
-├── docs/
-│   ├── README.md                           # This file
-│   ├── AGENT_SETUP.md                      # Setup instructions
-│   └── questions.md                        # Test questions
-└── DEPLOYMENT_SUMMARY.md                   # Deployment overview
-```
+## Project Structure
+<img src="project_structure.svg" width="100%">
 
 ---
 

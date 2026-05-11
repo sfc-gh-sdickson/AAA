@@ -4,6 +4,18 @@
 
 A Snowflake Intelligence solution for ACE (Automobile Club Experience) California, providing AI-powered analytics for roadside assistance operations, member services, and fleet management.
 
+## 🏗️ Architecture
+
+<img src="docs/architecture.svg" width="100%">
+
+## 🚀 Deployment Flow
+
+<img src="docs/deployment_flow.svg" width="100%">
+
+## 🤖 ML Model Pipeline
+
+<img src="docs/ML_model_flow.svg" width="100%">
+
 ## 🚗 Overview
 
 The ACE Intelligence Agent leverages Snowflake's Cortex AI capabilities to provide natural language access to comprehensive roadside assistance data. Ask questions in plain English and get instant insights about operations, members, and predictive analytics.
@@ -39,25 +51,9 @@ The ACE Intelligence Agent leverages Snowflake's Cortex AI capabilities to provi
 
 **Full question set**: [docs/questions.md](docs/questions.md)
 
-## 📁 Project Structure
+## Project Structure
 
-```
-ACE/
-├── sql/                     # SQL scripts
-│   ├── setup/              # Database and table creation
-│   ├── data/               # Sample data generation
-│   ├── views/              # Analytical and semantic views
-│   ├── search/             # Cortex Search services
-│   ├── ml/                 # ML model wrapper functions
-│   └── agent/              # Intelligence Agent creation
-├── notebooks/              # ML model training
-│   └── aaa_ml_models.ipynb # Predictive models notebook
-├── docs/                   # Documentation
-│   ├── README.md          # Project overview
-│   ├── AGENT_SETUP.md     # Setup guide
-│   └── questions.md       # Test questions
-└── DEPLOYMENT_SUMMARY.md  # Deployment details
-```
+<img src="docs/project_structure.svg" width="100%">
 
 ## ✅ Features
 

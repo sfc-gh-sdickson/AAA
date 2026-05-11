@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700">
+  <rect width="900" height="700" fill="white"/>
+
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="106%" height="110%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>
+      <feComponentTransfer in="offsetBlur" result="shadow">
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="50" y="15" width="800" height="50" rx="8" fill="#29B5E8" filter="url(#shadow)"/>
+  <text x="450" y="47" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial, sans-serif">ACE Intelligence Agent - System Architecture</text>
+
+  <rect x="50" y="80" width="800" height="70" rx="6" fill="#E8F4FD" stroke="#29B5E8" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="70" y="100" font-size="11" font-weight="bold" fill="#1B6B8E" font-family="Arial, sans-serif">USER INTERFACE LAYER</text>
+  <rect x="150" y="108" width="180" height="32" rx="5" fill="white" stroke="#29B5E8" stroke-width="1" filter="url(#shadow)"/>
+  <text x="240" y="129" text-anchor="middle" font-size="11" fill="#333" font-family="Arial, sans-serif">Snowsight Chat UI</text>
+  <rect x="360" y="108" width="180" height="32" rx="5" fill="white" stroke="#29B5E8" stroke-width="1" filter="url(#shadow)"/>
+  <text x="450" y="129" text-anchor="middle" font-size="11" fill="#333" font-family="Arial, sans-serif">Natural Language Queries</text>
+  <rect x="570" y="108" width="180" height="32" rx="5" fill="white" stroke="#29B5E8" stroke-width="1" filter="url(#shadow)"/>
+  <text x="660" y="129" text-anchor="middle" font-size="11" fill="#333" font-family="Arial, sans-serif">REST API Access</text>
+
+  <polygon points="445,152 455,152 450,165" fill="#666"/>
+
+  <rect x="50" y="170" width="800" height="85" rx="6" fill="#F0F7FF" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="70" y="190" font-size="11" font-weight="bold" fill="#2D5F8A" font-family="Arial, sans-serif">INTELLIGENCE AGENT LAYER (AUTO Model)</text>
+  <rect x="80" y="200" width="230" height="40" rx="5" fill="white" stroke="#4A90D9" stroke-width="1" filter="url(#shadow)"/>
+  <text x="195" y="216" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" font-family="Arial, sans-serif">Cortex Analyst (3 tools)</text>
+  <text x="195" y="232" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">Semantic View Queries</text>
+  <rect x="335" y="200" width="230" height="40" rx="5" fill="white" stroke="#4A90D9" stroke-width="1" filter="url(#shadow)"/>
+  <text x="450" y="216" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" font-family="Arial, sans-serif">Cortex Search (3 tools)</text>
+  <text x="450" y="232" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">Unstructured Text Retrieval</text>
+  <rect x="590" y="200" width="230" height="40" rx="5" fill="white" stroke="#4A90D9" stroke-width="1" filter="url(#shadow)"/>
+  <text x="705" y="216" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" font-family="Arial, sans-serif">ML Functions (3 tools)</text>
+  <text x="705" y="232" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">Predictive Model Inference</text>
+
+  <polygon points="445,257 455,257 450,270" fill="#666"/>
+
+  <rect x="50" y="275" width="800" height="120" rx="6" fill="#F5F0FF" stroke="#7B61FF" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="70" y="295" font-size="11" font-weight="bold" fill="#4B3D99" font-family="Arial, sans-serif">SEMANTIC &amp; SEARCH LAYER</text>
+
+  <rect x="80" y="305" width="230" height="75" rx="5" fill="white" stroke="#7B61FF" stroke-width="1" filter="url(#shadow)"/>
+  <text x="195" y="322" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" font-family="Arial, sans-serif">Semantic Views</text>
+  <text x="195" y="340" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">SV_MEMBER_SERVICE_INTELLIGENCE</text>
+  <text x="195" y="355" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">SV_FLEET_OPERATIONS_INTELLIGENCE</text>
+  <text x="195" y="370" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">SV_PREDICTIVE_ANALYTICS_INTELLIGENCE</text>
+
+  <rect x="335" y="305" width="230" height="75" rx="5" fill="white" stroke="#7B61FF" stroke-width="1" filter="url(#shadow)"/>
+  <text x="450" y="322" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" font-family="Arial, sans-serif">Cortex Search Services</text>
+  <text x="450" y="340" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">SERVICE_NOTES_SEARCH</text>
+  <text x="450" y="355" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">MEMBER_FEEDBACK_SEARCH</text>
+  <text x="450" y="370" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">INCIDENT_REPORTS_SEARCH</text>
+
+  <rect x="590" y="305" width="230" height="75" rx="5" fill="white" stroke="#7B61FF" stroke-width="1" filter="url(#shadow)"/>
+  <text x="705" y="322" text-anchor="middle" font-size="10" font-weight="bold" fill="#333" font-family="Arial, sans-serif">ML Model Registry</text>
+  <text x="705" y="340" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">SERVICE_VOLUME_PREDICTOR</text>
+  <text x="705" y="355" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">MEMBER_CHURN_PREDICTOR</text>
+  <text x="705" y="370" text-anchor="middle" font-size="9" fill="#666" font-family="Arial, sans-serif">RESPONSE_SUCCESS_PREDICTOR</text>
+
+  <polygon points="445,397 455,397 450,410" fill="#666"/>
+
+  <rect x="50" y="415" width="800" height="80" rx="6" fill="#F0FFF4" stroke="#28A745" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="70" y="435" font-size="11" font-weight="bold" fill="#1B6B2E" font-family="Arial, sans-serif">ANALYTICS LAYER (8 Views)</text>
+  <rect x="80" y="445" width="170" height="35" rx="4" fill="white" stroke="#28A745" stroke-width="1" filter="url(#shadow)"/>
+  <text x="165" y="466" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">V_MEMBER_360</text>
+  <rect x="260" y="445" width="170" height="35" rx="4" fill="white" stroke="#28A745" stroke-width="1" filter="url(#shadow)"/>
+  <text x="345" y="466" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">V_SERVICE_PERFORMANCE</text>
+  <rect x="440" y="445" width="170" height="35" rx="4" fill="white" stroke="#28A745" stroke-width="1" filter="url(#shadow)"/>
+  <text x="525" y="466" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">V_FLEET_ANALYTICS</text>
+  <rect x="620" y="445" width="200" height="35" rx="4" fill="white" stroke="#28A745" stroke-width="1" filter="url(#shadow)"/>
+  <text x="720" y="466" text-anchor="middle" font-size="9" fill="#333" font-family="Arial, sans-serif">V_DEMAND_PATTERNS + 4 more</text>
+
+  <polygon points="445,497 455,497 450,510" fill="#666"/>
+
+  <rect x="50" y="515" width="800" height="160" rx="6" fill="#FFF8F0" stroke="#E8830C" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="70" y="535" font-size="11" font-weight="bold" fill="#8B4E09" font-family="Arial, sans-serif">DATA LAYER (AAA_INTELLIGENCE Database)</text>
+
+  <rect x="80" y="545" width="370" height="115" rx="5" fill="white" stroke="#E8830C" stroke-width="1" filter="url(#shadow)"/>
+  <text x="265" y="562" text-anchor="middle" font-size="10" font-weight="bold" fill="#8B4E09" font-family="Arial, sans-serif">RAW Schema (Structured)</text>
+  <text x="100" y="580" font-size="9" fill="#333" font-family="Arial, sans-serif">MEMBERS (100K) | VEHICLES (150K)</text>
+  <text x="100" y="595" font-size="9" fill="#333" font-family="Arial, sans-serif">SERVICE_REQUESTS (2M) | SERVICE_FULFILLMENT (2M)</text>
+  <text x="100" y="610" font-size="9" fill="#333" font-family="Arial, sans-serif">SERVICE_TECHNICIANS (500) | SERVICE_TRUCKS (750)</text>
+  <text x="100" y="625" font-size="9" fill="#333" font-family="Arial, sans-serif">WEATHER_CONDITIONS (50K) | TRAFFIC_CONDITIONS (100K)</text>
+  <text x="100" y="640" font-size="9" fill="#333" font-family="Arial, sans-serif">PREDICTIVE_SCORES (100K) | EARLY_WARNING_ALERTS (25K)</text>
+  <text x="100" y="655" font-size="9" fill="#333" font-family="Arial, sans-serif">SERVICE_REGIONS (10) | MEMBER_SEGMENTS (80K)</text>
+
+  <rect x="470" y="545" width="350" height="115" rx="5" fill="white" stroke="#E8830C" stroke-width="1" filter="url(#shadow)"/>
+  <text x="645" y="562" text-anchor="middle" font-size="10" font-weight="bold" fill="#8B4E09" font-family="Arial, sans-serif">RAW Schema (Unstructured)</text>
+  <text x="490" y="585" font-size="9" fill="#333" font-family="Arial, sans-serif">SERVICE_NOTES (500K rows)</text>
+  <text x="490" y="605" font-size="9" fill="#333" font-family="Arial, sans-serif">MEMBER_FEEDBACK (100K rows)</text>
+  <text x="490" y="625" font-size="9" fill="#333" font-family="Arial, sans-serif">INCIDENT_REPORTS (50K rows)</text>
+  <text x="490" y="648" font-size="9" fill="#888" font-family="Arial, sans-serif">Total: ~5.3M+ rows</text>
+
+  <text x="450" y="692" text-anchor="middle" font-size="10" fill="#888" font-family="Arial, sans-serif">ACE Automobile Club Experience of California | Snowflake Intelligence Agent</text>
+</svg>
